@@ -1,10 +1,9 @@
-import { TdsButton, TdsTypography } from '../../design-system';
+import { TdsTypography } from '../../design-system';
 import 'twin.macro';
 import 'styled-components/macro';
 import { NavBar } from './NavBar';
-import { JSXElementConstructor, ReactElement, FunctionComponent } from 'react';
+import { ReactElement, FunctionComponent } from 'react';
 import tw from 'twin.macro';
-import { TdsLinkButton } from '../../design-system/components/buttons/linkButton/LinkButton';
 import { TdsLink } from '../../design-system/components/link/Link';
 
 type TutorialContainerProps = {
@@ -25,7 +24,15 @@ const StyledCanvas = tw.div`rounded bg-trailgrey-50 w-full p-4 shadow-lg`;
 const ExerciseHint: FunctionComponent<{ sourceFile: string }> = ({
   sourceFile,
 }) => {
-  return <div></div>;
+  return (
+    <div tw='flex justify-center items-center absolute inset-0 p-10'>
+      <TdsTypography variant='subtitle1' tw='text-trailgrey-600'>
+        Open the <TdsLink url={sourceFile}>exercise file </TdsLink>
+        in VS Code and try to implement the example above. Your changes will be
+        rendered here.
+      </TdsTypography>
+    </div>
+  );
 };
 
 const Canvas = ({ title, children, type }: CanvasProps) => {
@@ -35,18 +42,23 @@ const Canvas = ({ title, children, type }: CanvasProps) => {
     (children.type as React.FunctionComponent)({})?.type.toString() ===
     'Symbol(react.fragment)';
   const sourceFile = (children as any)._source.fileName;
-  const vscodeLink = `vscode://file/${sourceFile}`;
+  const tutorialLink = `vscode://file/${sourceFile}`;
+  const solutionLink = tutorialLink.replace('.tsx', 'Solution.tsx');
+  const exerciseLink = tutorialLink.replace('.tsx', 'Exercise.tsx');
+
   return (
     <StyledCanvas>
       <div tw='flex items-center space-x-4'>
         <TdsTypography variant='h4'>{title}</TdsTypography>
-        {isSolution && <TdsLink url={vscodeLink}>View source</TdsLink>}
+        <TdsLink url={isSolution ? solutionLink : exerciseLink}>
+          View source
+        </TdsLink>
       </div>
-      <div tw='bg-white w-full border p-4 border-border-1 min-h-[12rem]'>
+      <div tw='bg-white w-full border p-4 border-border-1 min-h-[12rem] relative'>
         {!isExercise || !isEmpty ? (
           children
         ) : (
-          <ExerciseHint sourceFile={sourceFile} />
+          <ExerciseHint sourceFile={exerciseLink} />
         )}
       </div>
     </StyledCanvas>
