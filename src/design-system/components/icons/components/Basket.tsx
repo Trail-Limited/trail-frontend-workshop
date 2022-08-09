@@ -1,18 +1,18 @@
 //eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-nocheck
-import { css } from 'styled-components';
-import { getIconSizeStyle, IconProps } from '../iconCommon';
-import { createGuid } from '../../../utils/guid';
+import { css } from "styled-components/macro";
+import { getIconSizeStyle, IconProps } from "../iconCommon";
+import { createGuid } from "../../../utils/guid";
 export const TdsIconBasket = ({
   title: titleSource,
   color,
-  size = 'md',
+  size = "md",
   isStandalone = false,
   ...props
 }: IconProps): JSX.Element => {
   if (isStandalone && !titleSource) {
     console.warn(
-      'You must include a title for a standalone icon to make it accessible. See Storybook documentation for more details.'
+      "You must include a title for a standalone icon to make it accessible. See Storybook documentation for more details."
     );
   }
 

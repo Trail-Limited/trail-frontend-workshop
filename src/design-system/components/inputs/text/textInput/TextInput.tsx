@@ -1,6 +1,6 @@
-import { FunctionComponent } from 'react';
-import { IconProps } from '../../../icons/iconCommon';
-import { BaseTextInput, CommonTextInputProps } from '../BaseTextInput';
+import { FunctionComponent } from "react";
+import { IconProps } from "../../../icons/iconCommon";
+import { BaseTextInput, CommonTextInputProps } from "../BaseTextInput";
 
 type BaseTextInputProps = {
   /**
@@ -16,7 +16,7 @@ type TextInputProps = BaseTextInputProps & CommonTextInputProps<string>;
 /**
  * A simplified props typing for Storybook documentation.
  */
-// eslint-disable-next-line react/jsx-no-useless-fragment, unused-imports/no-unused-vars
+// eslint-disable-next-line react/jsx-no-useless-fragment
 export const TdsTextInputDoc = (props: BaseTextInputProps) => <></>;
 
 export const TdsTextInput = ({

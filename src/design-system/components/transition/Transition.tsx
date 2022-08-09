@@ -1,10 +1,10 @@
 import {
   Transition as HeadlessUiTransition,
   TransitionEvents,
-} from '@headlessui/react';
-import tw, { styled, TwStyle, css } from 'twin.macro';
-import { createGlobalStyle } from 'styled-components';
-import { useId } from 'react-aria';
+} from "@headlessui/react";
+import tw, { styled, TwStyle, css } from "twin.macro";
+import { createGlobalStyle } from "styled-components/macro";
+import { useId } from "react-aria";
 
 /**
  * HeadlessUI "Transition"
@@ -85,13 +85,13 @@ TdsTransition.Child = function TransitionChild(props: TransitionProps) {
 function getProps(props: TransitionProps) {
   return {
     ...props,
-    enter: 'enter',
-    enterFrom: 'enter-from',
-    enterTo: 'enter-to',
-    entered: 'entered',
-    leave: 'leave',
-    leaveFrom: 'leave-from',
-    leaveTo: 'leave-to',
+    enter: "enter",
+    enterFrom: "enter-from",
+    enterTo: "enter-to",
+    entered: "entered",
+    leave: "leave",
+    leaveFrom: "leave-from",
+    leaveTo: "leave-to",
     beforeEnter: () => props.beforeEnter?.(),
     afterEnter: () => props.afterEnter?.(),
     beforeLeave: () => props.beforeLeave?.(),

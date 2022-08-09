@@ -6,7 +6,7 @@ import {
   Validation,
   ValidationState,
   ValueBase,
-} from '@react-types/shared';
+} from "@react-types/shared";
 import {
   FunctionComponent,
   InputHTMLAttributes,
@@ -15,23 +15,23 @@ import {
   ReactNode,
   Ref,
   useRef,
-} from 'react';
-import { useFocusRing, useTextField } from 'react-aria';
+} from "react";
+import { useFocusRing, useTextField } from "react-aria";
 import NumberFormat, {
   InputAttributes,
   NumberFormatProps,
-} from 'react-number-format';
-import { StyledComponent } from 'styled-components';
-import tw, { css, styled } from 'twin.macro';
-import { inputFocusStyles } from '../../../styles/focus/inputFocusStyles';
-import { TdsGhostIconButton } from '../../buttons/ghostIconButton/GhostIconButton';
-import { TdsIconCross } from '../../icons/components';
-import { IconProps } from '../../icons/iconCommon';
-import { CommonInputProps } from '../types/commonInputProps';
+} from "react-number-format";
+import { StyledComponent } from "styled-components/macro";
+import tw, { css, styled } from "twin.macro";
+import { inputFocusStyles } from "../../../styles/focus/inputFocusStyles";
+import { TdsGhostIconButton } from "../../buttons/ghostIconButton/GhostIconButton";
+import { TdsIconCross } from "../../icons/components";
+import { IconProps } from "../../icons/iconCommon";
+import { CommonInputProps } from "../types/commonInputProps";
 
 export type FormatterInputAttributes = {
-  type?: 'text' | 'tel' | 'password';
-} & Omit<InputAttributes, 'type'>;
+  type?: "text" | "tel" | "password";
+} & Omit<InputAttributes, "type">;
 
 export type CustomTextInputProps = {
   /** Determines the width of the input by the number of characters it can fit. */
@@ -55,7 +55,7 @@ export type CommonTextInputProps<Value extends string | number> = {
 } & AriaLabelingProps &
   Validation &
   InputBase &
-  Omit<ValueBase<Value>, 'onChange'> &
+  Omit<ValueBase<Value>, "onChange"> &
   TextInputBase &
   FocusableProps &
   CustomTextInputProps &
@@ -112,7 +112,7 @@ type StyledIconContainerProps = {
 };
 
 type StyledAddonProps = {
-  location: 'left' | 'right';
+  location: "left" | "right";
 };
 
 type StyledNumberFormatProps = {
@@ -139,8 +139,8 @@ border border-grey-300 rounded p-2
 hover:border-blue-400
 `};
   ${({ showFocusRing, validationState }) =>
-    showFocusRing && inputFocusStyles(validationState === 'invalid')};
-  ${({ validationState }) => validationState === 'invalid' && invalidStyles};
+    showFocusRing && inputFocusStyles(validationState === "invalid")};
+  ${({ validationState }) => validationState === "invalid" && invalidStyles};
   ${({ isDisabled, isRestricted }) =>
     (isDisabled || isRestricted) &&
     tw`border-trailgrey-400 bg-grey-100 text-grey-300`};
@@ -158,7 +158,7 @@ const StyledInput = styled.input<StyledInputProps>`
 
 const StyledAddonContainer = styled.div<StyledAddonProps>`
   ${() => tw`-m-2`};
-  ${({ location }) => (location === 'left' ? tw`mr-0` : tw`-mr-2!`)};
+  ${({ location }) => (location === "left" ? tw`mr-0` : tw`-mr-2!`)};
 `;
 
 const StyledNumberFormat = styled(NumberFormat)<StyledNumberFormatProps>`
@@ -190,7 +190,7 @@ export const BaseTextInput = <Value extends string | number = string>({
 
   const setInputRef = (node: HTMLInputElement) => {
     (inputRef as MutableRefObject<HTMLInputElement>).current = node;
-    if (typeof innerRef === 'function') {
+    if (typeof innerRef === "function") {
       innerRef(node);
     } else if (innerRef) {
       (innerRef as MutableRefObject<HTMLInputElement>).current = node;
@@ -236,7 +236,7 @@ export const BaseTextInput = <Value extends string | number = string>({
       )}
       {useFormattedInput ? (
         <StyledNumberFormat<
-          StyledComponent<'input', never, StyledInputProps, never>
+          StyledComponent<"input", never, StyledInputProps, never>
         >
           isFullWidth={isFullWidth}
           isDisabled={props.isDisabled}

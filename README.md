@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+# Trail React Training Tutorials
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project contains the tutorials for the [Trail Front-end Training](https://app.clickup.com/36621220/v/dc/12xjx4-13762).
 
-## Available Scripts
+# Gettings Started
 
-In the project directory, you can run:
+## Step 1: Install Node.js
 
-### `npm start`
+If you don't have **Node.js** installed already, you'll have to install it [here](https://nodejs.org/en/).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Step 2: Install yarn
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Yarn** is the package manager we use, you'll need to install it with the following command in the console.
 
-### `npm test`
+```
+npm install --global yarn
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Step 3: Install dependencies
 
-### `npm run build`
+Open the project in **VS Code**, then in the Terminal, run the following command to install dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+yarn
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> Note: On Windows machines, you might need configure Power Shell to allow custom scripts to be run:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+// In the VS Code terminal (using Power Shell)
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
 
-### `npm run eject`
+## Step 4: Open Tutorials
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To run the tutorial app, type the following command into the VSCode terminal.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+yarn cypress:open
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+After the tutorial app is opened, select tutorial you want to do from the homepage.

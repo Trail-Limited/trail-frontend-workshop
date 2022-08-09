@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import tw, { GlobalStyles } from 'twin.macro';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import * as icons from './components';
 import { IconProps } from './iconCommon';
 import { BaseStyleContainer } from '../../styles/tailwind/baseStyles';

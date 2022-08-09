@@ -1,17 +1,19 @@
 import ReactDOM from "react-dom/client";
-import App from "./app/App";
 import { StrictMode } from "react";
-import { tdsBaseStyles } from "./design-system";
-import { GlobalStyles } from "twin.macro";
+import { BrowserRouter } from "react-router-dom";
+import { AppRoutes } from "./app/AppRoutes";
+import "styled-components/macro";
+import { BaseStyleContainer } from "./design-system";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <StrictMode>
-    <GlobalStyles />
-    <div css={tdsBaseStyles}>
-      <App />
-    </div>
+    <BrowserRouter>
+      <BaseStyleContainer>
+        <AppRoutes />
+      </BaseStyleContainer>
+    </BrowserRouter>
   </StrictMode>
 );

@@ -1,37 +1,37 @@
-import { ReactNode, ReactText } from 'react';
-import tw, { css, styled, TwStyle } from 'twin.macro';
+import { ReactNode } from "react";
+import tw, { css, styled, TwStyle } from "twin.macro";
 
 type TypeVariant =
-  | 'h1'
-  | 'h2'
-  | 'h3'
-  | 'h4'
-  | 'h5'
-  | 'h6'
-  | 'h7'
-  | 'subtitle1'
-  | 'subtitle2'
-  | 'label'
-  | 'body1'
-  | 'body2'
-  | 'button1'
-  | 'button2'
-  | 'caption';
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "h6"
+  | "h7"
+  | "subtitle1"
+  | "subtitle2"
+  | "label"
+  | "body1"
+  | "body2"
+  | "button1"
+  | "button2"
+  | "caption";
 
 type TypeComponent =
-  | 'auto'
-  | 'h1'
-  | 'h2'
-  | 'h3'
-  | 'h4'
-  | 'h5'
-  | 'h6'
-  | 'div'
-  | 'label'
-  | 'code'
-  | 'span';
+  | "auto"
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "h6"
+  | "div"
+  | "label"
+  | "code"
+  | "span";
 
-type GutterConfig = 'full' | 'disabled' | 'top-only' | 'bottom-only';
+type GutterConfig = "full" | "disabled" | "top-only" | "bottom-only";
 
 type TypographyProps = {
   /** The typeset style to be applied. */
@@ -56,7 +56,7 @@ type TypographyProps = {
   /**
    * Label for assistive technologies
    */
-  ['aria-label']?: string;
+  ["aria-label"]?: string;
   /** The text content. */
   children: ReactNode;
   /** @ignore Allows component to be styled. */
@@ -70,21 +70,21 @@ type StyledTextProps = {
 
 /** Provides the default component for variants. */
 const componentMapping: { [Variant in TypeVariant]: TypeComponent } = {
-  h1: 'h1',
-  h2: 'h2',
-  h3: 'h3',
-  h4: 'h4',
-  h5: 'h5',
-  h6: 'h6',
-  h7: 'h6',
-  subtitle1: 'div',
-  subtitle2: 'div',
-  label: 'label',
-  body1: 'span',
-  body2: 'span',
-  button1: 'span',
-  button2: 'span',
-  caption: 'span',
+  h1: "h1",
+  h2: "h2",
+  h3: "h3",
+  h4: "h4",
+  h5: "h5",
+  h6: "h6",
+  h7: "h6",
+  subtitle1: "div",
+  subtitle2: "div",
+  label: "label",
+  body1: "span",
+  body2: "span",
+  button1: "span",
+  button2: "span",
+  caption: "span",
 };
 
 const gutters: { [Variant in TypeVariant]: { top: TwStyle; bottom: TwStyle } } =
@@ -153,35 +153,35 @@ const gutters: { [Variant in TypeVariant]: { top: TwStyle; bottom: TwStyle } } =
 
 const typeStyle = (variant: TypeVariant) => {
   switch (variant) {
-    case 'h1':
+    case "h1":
       return tw`font-heading font-semibold text-h1`;
-    case 'h2':
+    case "h2":
       return tw`font-heading font-semibold text-h2`;
-    case 'h3':
+    case "h3":
       return tw`font-heading font-semibold text-h3`;
-    case 'h4':
+    case "h4":
       return tw`font-heading font-semibold text-h4`;
-    case 'h5':
+    case "h5":
       return tw`font-heading font-semibold text-h5`;
-    case 'h6':
+    case "h6":
       return tw`font-heading font-semibold text-h6`;
-    case 'h7':
+    case "h7":
       return tw`font-heading font-semibold text-h7`;
-    case 'subtitle1':
+    case "subtitle1":
       return tw`text-subtitle1 font-semibold`;
-    case 'subtitle2':
+    case "subtitle2":
       return tw`text-subtitle2 font-semibold`;
-    case 'label':
+    case "label":
       return tw`text-label font-semibold`;
-    case 'body1':
+    case "body1":
       return tw`text-body1 leading-normal`;
-    case 'body2':
+    case "body2":
       return tw`text-body2`;
-    case 'button1':
+    case "button1":
       return tw`text-button1 font-bold leading-none`;
-    case 'button2':
+    case "button2":
       return tw`text-button2 font-bold leading-none`;
-    case 'caption':
+    case "caption":
       return tw`text-caption`;
   }
 };
@@ -190,16 +190,16 @@ const gutterStyle = (variant: TypeVariant, gutterConfig: GutterConfig) => {
   const config = gutters[variant];
 
   switch (gutterConfig) {
-    case 'disabled':
+    case "disabled":
       return;
-    case 'full':
+    case "full":
       return css`
         ${() => config.top};
         ${() => config.bottom};
       `;
-    case 'top-only':
+    case "top-only":
       return config.top;
-    case 'bottom-only':
+    case "bottom-only":
       return config.bottom;
   }
 };
@@ -210,13 +210,13 @@ const StyledText = styled.div<StyledTextProps>`
 `;
 
 export const TdsTypography = ({
-  variant = 'body1',
-  gutter = 'full',
-  component = 'auto',
+  variant = "body1",
+  gutter = "full",
+  component = "auto",
   children,
   ...props
 }: TypographyProps) => {
-  if (!component || component === 'auto') {
+  if (!component || component === "auto") {
     component = componentMapping[variant];
   }
 

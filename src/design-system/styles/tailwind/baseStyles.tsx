@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
-import tw, { css, styled } from "twin.macro";
+import tw, { css, GlobalStyles, styled } from "twin.macro";
 import { globalStylesScoped } from "./globalStylesScoped";
 import "react-loading-skeleton/dist/skeleton.css";
+import "styled-components/macro";
 
 type BaseStyleContainerProps = {
   children: ReactNode;
@@ -26,7 +27,6 @@ export const tdsBaseStyles = css`
 `;
 
 const StyledBaseDiv = styled.div`
-  ${() => globalStylesScoped};
   ${() => tdsBaseStyles};
 `;
 
@@ -38,5 +38,9 @@ export const BaseStyleContainer = ({
   children,
   className,
 }: BaseStyleContainerProps) => (
-  <StyledBaseDiv className={className}>{children}</StyledBaseDiv>
+  <StyledBaseDiv className={className}>
+    <></>
+    <GlobalStyles />
+    {children}
+  </StyledBaseDiv>
 );

@@ -1,11 +1,11 @@
 const iconTemplate = ({ componentName, jsx }, { tpl }) => {
-  const customName = `TdsIcon${componentName.split('Svg')[1]}`;
+  const customName = `TdsIcon${componentName.split("Svg")[1]}`;
 
   return tpl`
   //eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //@ts-nocheck
 
-  import { css } from 'styled-components';
+  import { css } from 'styled-components/macro';
   import { getIconSizeStyle, IconProps } from '../iconCommon';
   import { createGuid } from "../../../utils/guid";
 
