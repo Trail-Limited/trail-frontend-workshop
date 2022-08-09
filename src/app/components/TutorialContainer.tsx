@@ -50,9 +50,11 @@ const Canvas = ({ title, children, type }: CanvasProps) => {
     <StyledCanvas>
       <div tw='flex items-center space-x-4'>
         <TdsTypography variant='h4'>{title}</TdsTypography>
-        <TdsLink url={isSolution ? solutionLink : exerciseLink}>
-          View source
-        </TdsLink>
+        {!isEmpty && (
+          <TdsLink url={isSolution ? solutionLink : exerciseLink}>
+            View source
+          </TdsLink>
+        )}
       </div>
       <div tw='bg-white w-full border p-4 border-border-1 min-h-[12rem] relative'>
         {!isExercise || !isEmpty ? (
