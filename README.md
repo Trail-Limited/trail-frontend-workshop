@@ -1,6 +1,6 @@
-# Trail React Training Tutorials
+# Trail Front End Training Tutorials
 
-This project contains the tutorials for the [Trail Front-end Training](https://app.clickup.com/36621220/v/dc/12xjx4-13762).
+This project contains the tutorials for the [Trail Front End Workshop](https://app.clickup.com/36621220/v/dc/12xjx4-13762).
 
 # Gettings Started
 
@@ -31,12 +31,16 @@ yarn
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-## Step 4: Open Tutorials
+## Step 4: Run Tutorials
 
 To run the tutorial app, type the following command into the VSCode terminal.
 
 ```
-yarn cypress:open
+yarn start
 ```
 
 After the tutorial app is opened, select tutorial you want to do from the homepage.
+
+## Step 5: Install VS Code extension
+
+For the best developer experience, please install the [**Tailwind Twin IntelliSense**](https://marketplace.visualstudio.com/items?itemName=lightyen.tailwindcss-intellisense-twin) extension to get awesome code autocomplete for styling.
