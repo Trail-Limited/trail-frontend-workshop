@@ -55,7 +55,7 @@ const SiteMap = () => {
 
   return (
     <div tw='space-y-3'>
-      <Section name='React Tutorials' isDev>
+      <Section name='Tutorials' isDev>
         {tutorialRoutes}
       </Section>
       {/* <div tw='my-5! border-t border-border-1' /> */}
@@ -66,7 +66,7 @@ const SiteMap = () => {
 export const LandingPage = () => {
   return (
     <div tw='flex justify-center flex-col max-w-2xl m-auto gap-8 p-4'>
-      <TdsTypography variant='h1'>Trail Frontend Training</TdsTypography>
+      <TdsTypography variant='h1'>Trail Front End Workshop</TdsTypography>
       <SiteMap />
     </div>
   );
