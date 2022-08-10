@@ -16,19 +16,19 @@ If you don't have **Node.js** installed already, you'll have to install it [here
 npm install --global yarn
 ```
 
+> Note: On Windows machines, you might need configure Power Shell to allow custom scripts to be run:
+
+```
+// In the VS Code terminal (using Power Shell)
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
 ## Step 3: Install dependencies
 
 Open the project in **VS Code**, then in the Terminal, run the following command to install dependencies:
 
 ```
 yarn
-```
-
-> Note: On Windows machines, you might need configure Power Shell to allow custom scripts to be run:
-
-```
-// In the VS Code terminal (using Power Shell)
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 ## Step 4: Run Tutorials
